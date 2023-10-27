@@ -7,6 +7,7 @@ const httpOptions = {
     'Content-Type' : 'application/json'
   })
 }
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,8 +26,8 @@ export class CarrosService {
     const url = `${this.apiUrl}/cadastrar`;
     return this.http.post<Carro>(url, carro, httpOptions);
   }
-  atualizar(carro: Carro): Observable<any> {
-    const url = `${this.apiUrl}/atualizar`;
+  alterar(carro: Carro): Observable<any> {
+    const url = `${this.apiUrl}/alterar`;
     return this.http.put<Carro>(url, carro, httpOptions);
   }
   excluir(placa: string): Observable<any> {
